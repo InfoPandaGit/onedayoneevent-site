@@ -7,6 +7,7 @@ on:
       - .nojekyll
       - index.html
       - privacy.html
+      - terms.html
       - .github/workflows/publish-public-site.yml
   workflow_dispatch:
 
@@ -33,7 +34,7 @@ jobs:
       - name: Construct public-site artifact
         run: |
           mkdir -p public-site-artifact
-          cp .nojekyll index.html privacy.html public-site-artifact/
+          cp .nojekyll index.html privacy.html terms.html public-site-artifact/
       - name: Upload public-site artifact
         uses: actions/upload-pages-artifact@v3
         with:
